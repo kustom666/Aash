@@ -1,6 +1,6 @@
 /*mainFen.cpp 
-fichier de l'application Aash, ce fichier est redistribuÈ sous license GNU/GPL merci de laisser ce commentaire
-Et de toujours citer l'auteur de ce fichier si vous le rÈutilisez. La license est disponible dans le dossier ressources/license
+fichier de l'application Aash, ce fichier est redistribu? sous license GNU/GPL merci de laisser ce commentaire
+Et de toujours citer l'auteur de ce fichier si vous le r?utilisez. La license est disponible dans le dossier ressources/license
 Auteur : Kustom*/
 
 
@@ -19,7 +19,7 @@ mainFen::mainFen()
   //intitialisation de la fentre et marquage en temps rel du splash screen
   creerActions();
   creerMenus();
-  splash.showMessage(tr("Menus chargés"));
+  splash.showMessage(tr("Menus charg?s"));
   splash.showMessage(tr("Chargement de la barre d'outils..."));
   creerBarresOutils();
   onglets = new QTabWidget;
@@ -54,7 +54,7 @@ QTextStream in(&file);
   
     
   barreEtat = statusBar();
-  barreEtat->showMessage("Prêt");
+  barreEtat->showMessage("Pr�t");
   
   //Proprits de base de la fentre
   setMinimumSize(500, 350);
@@ -227,7 +227,7 @@ void mainFen::fermerOnglet()
     }
   else //Sinon, on empche l'utilisateur, ou il ne pourra plus utiliser le programme
     {
-      QMessageBox::critical(this, tr("AquaAash Erreur"), tr("Vous ne pouvez pas supprimer l'onglet courrant car c'est le dernier."));
+      QMessageBox::critical(this, tr("Aash Erreur"), tr("Vous ne pouvez pas supprimer l'onglet courrant car c'est le dernier."));
     }
 }
 //Fonctions dont le nom est explicite, voir la doc de QScintilla pour plus d'infos sur les fonctions utilises.
@@ -264,7 +264,7 @@ void mainFen::sauver()
       QTextStream out(&fichier);//On cr une sortie
       out << texteASauver;//Et on envoie le texte dans la sortie
     }
-  barreEtat->showMessage("Fichier Sauvegardé", 3000);
+  barreEtat->showMessage("Fichier Sauvegard�", 3000);
   changementTitre(adresseFichier);
 }
 void mainFen::sauverSous()
@@ -283,23 +283,28 @@ void mainFen::sauverSous()
 }
 void mainFen::ouvrir()
 {
-  
+
+
   QString texteOuvert(""); 
-  QString adresseFichier = QFileDialog::getOpenFileName(this, "Ouvrir un fichier", QString(),  "Tout document texte(*.*)"); //On rcupre l'adresse du fichier
-  if (adresseFichier != "")
+  QStringList adresseFichier = QFileDialog::getOpenFileNames(this, "Ouvrir un fichier", QString(),  "Tout document texte(*.*)"); //On r�cup�re l'adresse du fichier
+
+  foreach (QString adFichier, adresseFichier)
+  {
+
+  if (adFichier != "")
     {
-      QFile file(adresseFichier);
+      QFile file(adFichier);
       if (file.open(QFile::ReadOnly)) //Si on peut ouvrir le document en mode de lecture uniquement
 	{
 	  QTextStream in(&file);//On cr une entre
+	  in.setCodec("UTF-8");
 	  int compteur = 0;
 	  while (!in.atEnd()) //Tant qu'on est pas arriv  la fin du document
 	    {
 	      texteOuvert += in.readLine() + "\n";//On ajoute la ligne parcourue  l'entre, avec un retour  la ligne  la fin
 	      compteur++;
 	    }
-	 texteOuvert = texteOuvert.toUtf8();
-	 
+
 
 	}
       
@@ -308,26 +313,27 @@ void mainFen::ouvrir()
          // display contents
          editeurActuel()->setPlainText(texteOuvert);
          
-	 if (adresseFichier.right(4)==".cpp")
+	 if (adFichier.right(4)==".cpp")
 	    {
 	      highlighterCCPP = new Highlighter(editeurActuel()->document());
 	    }
-	 else if (adresseFichier.right(2)==".c")
+	 else if (adFichier.right(2)==".c")
 	    {
 	      highlighterCCPP = new Highlighter(editeurActuel()->document());
 	    }
-	 else if (adresseFichier.right(5)==".html")
+	 else if (adFichier.right(5)==".html")
 	    {
 	      highlighterhtml = new highlighterHTML(editeurActuel()->document());
 	    }
-	 else if (adresseFichier.right(4)==".php")
+	 else if (adFichier.right(4)==".php")
 	    {
 	      highlighterhtml = new highlighterHTML(editeurActuel()->document());
 	    }
-   changementTitre(adresseFichier);
+   changementTitre(adFichier);
    connect(editeurActuel(), SIGNAL(cursorPositionChanged()), this, SLOT(updateLigne()));
    creerSets();
      }
+}
 }
 
 void mainFen::changementOnglet(int index)
@@ -352,7 +358,7 @@ void mainFen::changementColo(int indexCombo)
      }
 }
 void mainFen::changementTitre(QString adresseFichier)
-{ //Fonction pompe, désolé :D
+{ //Fonction pompe, d?sol? :D
   QString titreComplet = adresseFichier;
   QString titreCourt = titreComplet;
 
@@ -363,8 +369,9 @@ void mainFen::changementTitre(QString adresseFichier)
     }
     
  
-  setWindowTitle(titreCourt + " - " + tr("AquaAsh"));
+  setWindowTitle(titreCourt + " - " + tr("Aash"));
   onglets->setTabText(onglets->currentIndex(), titreComplet);
+
 }
 
 bool mainFen::nonSauve()
@@ -424,7 +431,7 @@ void mainFen::closeEvent(QCloseEvent *event)
    QString titre = windowTitle();
    if (titre.left(1) == "*") 
        {
-	 int reponse = QMessageBox::question(this, tr("Sauvegarder les fichiers"), tr("Le fichier en cours est modifié, voulez vous le sauvegarder?"), QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+	 int reponse = QMessageBox::question(this, tr("Sauvegarder les fichiers"), tr("Le fichier en cours ? subi des modifications, voulez vous le sauvegarder?").toUtf8(), QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
 	 if (reponse == QMessageBox::Yes)
 	   {
 	     sauver();
@@ -464,7 +471,7 @@ void mainFen::updateLigne()
    colonnes = editeurActuel()->textCursor().columnNumber();
    QString sLignes = QString::number(lignes);
    QString sColonnes = QString::number(colonnes);
-   barreEtat->showMessage("Ligne n° : "+ sLignes +"\t Colonne n° : " + sColonnes);
+   barreEtat->showMessage("Ligne n? : "+ sLignes +"\t Colonne n? : " + sColonnes);
 
   
  }

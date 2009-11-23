@@ -18,14 +18,16 @@ int main(int argc, char* argv[])
 
     // Traduction des chaînes prédéfinies par Qt dans notre langue
     
-	//QString locale = QLocale::system().name().section('_', 0, 0);
+	QString localeA = QLocale::system().name();
 
 	QTranslator translator;
-	translator.load(QString("aash_fr"));
+	translator.load(QString("aash_") +localeA);
 	app.installTranslator(&translator);
 	
+	QString locale = QLocale::system().name();
+	
 	QTranslator translatorQt;
-	translator.load(QString("qt_fr"));
+	translator.load(QString("qt_") +locale);
 	app.installTranslator(&translatorQt);
 
 	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
