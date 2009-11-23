@@ -1,0 +1,4 @@
+Merci d'avoir téléchargé et choisi AquaAash pour éditer vos documents html, php, etc.
+Vous trouverez plus d'informations sur le site de l'éditeur, kustom666.power-heberg.com
+
+Ce programme est sous license GPL, celle-ci est disponible dans le dossier ressources/license sous le nom gpl.txt

@@ -1,0 +1,17 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+	<file>ressources/images/TextEditor.png</file>
+	<file>ressources/images/editpaste-256.png</file>
+	<file>ressources/images/editcopy-256.png</file>
+	<file>ressources/images/filesave-256.png</file>
+	<file>ressources/images/fileopen-256.png</file>
+	<file>ressources/images/editcut-256.png</file>
+	<file>ressources/images/editcut-256.png</file>
+	<file>ressources/images/filesaveas-256.png</file>
+	<file>ressources/images/filenew-256.png</file>
+	<file>ressources/images/tab_remove-256.png</file>
+	<file>ressources/images/exec-256.png</file>
+	<file>ressources/texte/scratch.txt</file>
+
+</qresource>
+</RCC>

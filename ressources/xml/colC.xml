@@ -1,0 +1,21 @@
+	<!DOCTYPE colC
+   PUBLIC "-//AASH//DTD Coloration 1.0 //FR"
+   "kustom666.powerherberg.com">
+<!--Fichier de configuration de la coloration du C/C++ -->
+<coloration name="colC">
+  <couleurMotsClef>
+   <couleurRouge>46</couleurRouge>
+    <couleurVert>0</couleurVert>
+    <couleurBleu>108</couleurBleu>
+  </couleurMotsClef>
+  <couleurIf>
+    <couleurRouge>108</couleurRouge>
+    <couleurVert>2</couleurVert>
+    <couleurBleu>119</couleurBleu>
+  </couleurIf>
+  <couleurClass>
+   <couleurRouge>108</couleurRouge>
+    <couleurVert>2</couleurVert>
+    <couleurBleu>119</couleurBleu>
+  </couleurClass>
+</coloration>
