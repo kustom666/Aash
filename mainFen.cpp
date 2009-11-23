@@ -54,7 +54,7 @@ QTextStream in(&file);
   
     
   barreEtat = statusBar();
-  barreEtat->showMessage("Prèt");
+  barreEtat->showMessage("Prêt");
   
   //Proprits de base de la fentre
   setMinimumSize(500, 350);
@@ -298,7 +298,7 @@ void mainFen::ouvrir()
 	      texteOuvert += in.readLine() + "\n";//On ajoute la ligne parcourue  l'entre, avec un retour  la ligne  la fin
 	      compteur++;
 	    }
-	 
+	 texteOuvert = texteOuvert.toUtf8();
 	 
 
 	}
@@ -374,7 +374,7 @@ bool mainFen::nonSauve()
   if (titre.left(1) != "*")//Si le document n'est pas encore marqu comme non sauv
     {
       titre = "*"+titre+"*";// on ajoute une toile de chaque cot du titre du document pour signaler qu'il est rest sans sauvegarde
-      setWindowTitle(titre + " - " + tr("AquaAsh"));// et on update le titre
+      setWindowTitle(titre + " - " + tr("Aash"));// et on update le titre
       return true;
     }
   else
@@ -403,14 +403,11 @@ void mainFen::dezoomer()
 }
 void mainFen::creerSets()
 {
-  /* editeurActuel()->autoCompleteFromAll();
-  editeurActuel()->setAutoCompletionFillupsEnabled(true);
-  editeurActuel()->setAutoIndent(true);
-  editeurActuel()->setUtf8(true);*/
+
 }
 void mainFen::compiler()
 {
-  // QString slash = "";
+  /*// QString slash = "";
   QString adresseCompilation = "cd " + onglets->tabText(onglets->currentIndex());
   
     adresseCompilation = adresseCompilation.remove(adresseCompilation.right(1));
@@ -419,7 +416,7 @@ void mainFen::compiler()
   adresseCompilationChar = adresseCompilation.toAscii().data();
   system(adresseCompilationChar);
   system("qmake");
-  system("make -f /Users/Paul/Documents/mash/Makefile");
+  system("make -f /Users/Paul/Documents/mash/Makefile");*/
 }
 
 void mainFen::closeEvent(QCloseEvent *event)
@@ -427,7 +424,7 @@ void mainFen::closeEvent(QCloseEvent *event)
    QString titre = windowTitle();
    if (titre.left(1) == "*") 
        {
-	 int reponse = QMessageBox::question(this, tr("Sauvegarder les fichiers"), tr("Le fichier en cours est modifiÈ, voulez vous le sauvegarder?"), QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+	 int reponse = QMessageBox::question(this, tr("Sauvegarder les fichiers"), tr("Le fichier en cours est modifié, voulez vous le sauvegarder?"), QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
 	 if (reponse == QMessageBox::Yes)
 	   {
 	     sauver();
@@ -467,7 +464,7 @@ void mainFen::updateLigne()
    colonnes = editeurActuel()->textCursor().columnNumber();
    QString sLignes = QString::number(lignes);
    QString sColonnes = QString::number(colonnes);
-   barreEtat->showMessage("Ligne n∞ : "+ sLignes +"\t Colonne n∞ : " + sColonnes);
+   barreEtat->showMessage("Ligne n° : "+ sLignes +"\t Colonne n° : " + sColonnes);
 
   
  }

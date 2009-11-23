@@ -6,7 +6,7 @@ Auteur : Kustom*/
 
 #ifndef HIGHLIGHTER_H_INCLUDED
 #define HIGHLIGHTER_H_INCLUDED
-#include "QtGui"
+#include <QtGui>
 class Highlighter : public QSyntaxHighlighter
  {
      Q_OBJECT

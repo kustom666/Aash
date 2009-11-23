@@ -1,4 +1,4 @@
-/*mainFen.h 
+/*mainFen.h
 fichier de l'application Aash, ce fichier est redistribué sous license GNU/GPL merci de laisser ce commentaire
 Et de toujours citer l'auteur de ce fichier si vous le réutilisez. La license est disponible dans le dossier ressources/license
 Auteur : Kustom*/
@@ -6,29 +6,9 @@ Auteur : Kustom*/
 
 #ifndef DEF_MAINFEN
 #define DEF_MAINFEN
+#include "highlighterhtml.h"
 #include "Highlighter.h"
-#include "highlighterHTML.h"
-#include <QApplication>
-#include <QWidget>
-#include <QToolBar>
-#include <QMainWindow>
-#include <QComboBox>
-#include <QAction>
-#include <QMenu>
-#include <QVBoxLayout>
-#include <QFile>
-#include <QMessageBox>
-#include <QSplashScreen>
-#include <QMenuBar>
-#include <QFileDialog>
-#include <QTextStream>
-#include <QSettings>
-#include <QCloseEvent>
-#include <QPlainTextEdit>
-#include <QSyntaxHighlighter>
-#include <QLCDNumber>
-#include <QPainter>
-#include <QProgressBar>
+#include <QtGui>
 
 class mainFen : public QMainWindow
 {
@@ -42,7 +22,7 @@ class mainFen : public QMainWindow
         void creerMenus();
         void creerBarresOutils();
 	void creerSets();
-       
+
         QWidget *creerOnglet();
         QPlainTextEdit *editeurActuel();
 	Highlighter *highlighterCCPP;
@@ -71,7 +51,7 @@ class mainFen : public QMainWindow
 	void closeEvent(QCloseEvent *event);
 	bool nonSauve();
 
-	
+
     private:
 	QLCDNumber *compteurLignes ;
         QTabWidget *onglets;
@@ -101,5 +81,5 @@ class mainFen : public QMainWindow
 	int *compteur;
 };
 
- 
+
 #endif

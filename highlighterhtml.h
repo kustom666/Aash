@@ -5,14 +5,15 @@ Auteur : Kustom*/
 
 #ifndef HIGHLIGHTERHTML_H_INCLUDED
 #define HIGHLIGHTERHTML_H_INCLUDED
-#include "QtGui"
+#include <QtGui>
+
 class highlighterHTML : public QSyntaxHighlighter
  {
      Q_OBJECT
 
  public:
      highlighterHTML(QTextDocument *parent = 0);
-    
+
  protected:
      void highlightBlock(const QString &text);
 
@@ -29,12 +30,12 @@ class highlighterHTML : public QSyntaxHighlighter
 
      QTextCharFormat balisesFormat;
      QTextCharFormat fonctionFormat;
- 
+
      QTextCharFormat specFormat;
      QTextCharFormat commentaireFormat;
      QTextCharFormat texteFormat;
      QTextCharFormat bTexteFormat;
-     
+
      QTextCharFormat motsClefFormat;
      QTextCharFormat multiLineCommentFormat;
 
@@ -56,7 +57,7 @@ class highlighterHTML : public QSyntaxHighlighter
      QString colSpecR;
      QString colSpecV;
      QString colSpecB;
-     
+
  };
 
 

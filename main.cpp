@@ -14,12 +14,21 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
     QApplication::setLibraryPaths(QStringList(QString("plugins/")));
-    // Traduction des chaînes prédéfinies par Qt dans notre langue
-    QString locale = QLocale::system().name();
-    QTranslator translator;
-    translator.load(QString("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    app.installTranslator(&translator);
+	
 
+    // Traduction des chaînes prédéfinies par Qt dans notre langue
+    
+	//QString locale = QLocale::system().name().section('_', 0, 0);
+
+	QTranslator translator;
+	translator.load(QString("aash_fr"));
+	app.installTranslator(&translator);
+	
+	QTranslator translatorQt;
+	translator.load(QString("qt_fr"));
+	app.installTranslator(&translatorQt);
+
+	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
     // Ouverture de la fenêtre principale du navigateur
     mainFen principale;
     

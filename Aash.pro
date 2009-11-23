@@ -13,9 +13,9 @@ SOURCES += Highlighter.cpp \
            highlighterhtml.cpp \
            main.cpp \
            mainFen.cpp \
-           qtc-gdbmacros/gdbmacros.cpp
+          
 RESOURCES += ressources.qrc
-TRANSLATIONS += aquaash_en.ts aquaash_es.ts
+TRANSLATIONS += aash_en.ts aash_es.ts aash_fr.ts
 
 QT += xml
 
