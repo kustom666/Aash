@@ -15,8 +15,7 @@ class mainFen : public QMainWindow
     Q_OBJECT
 
     public:
-        mainFen();
-
+        mainFen(int argc, char* argv[]);
     private:
         void creerActions();
         void creerMenus();
@@ -54,9 +53,9 @@ class mainFen : public QMainWindow
 
     private:
 	QLCDNumber *compteurLignes ;
-        QTabWidget *onglets;
+    QTabWidget *onglets;
 	QStatusBar *barreEtat;
-        QAction *actionQuitter;
+    QAction *actionQuitter;
 	QAction *actionAnnuler;
 	QAction *actionRefaire;
 	QAction *actionNouveau;
@@ -68,7 +67,7 @@ class mainFen : public QMainWindow
 	QAction *actionCopier;
 	QAction *actionCouper;
 	QAction *actionColler;
-        QAction *actionFermer;
+    QAction *actionFermer;
 	QAction *actionCPP;
 	QAction *actionHTML;
 	QAction *actionCompiler;

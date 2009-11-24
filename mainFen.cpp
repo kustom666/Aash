@@ -8,13 +8,13 @@ Auteur : Kustom*/
 #include <fstream>
 #include <iostream>
 
-mainFen::mainFen()
+mainFen::mainFen(int argc, char* argv[])
 {
   //Creation et gestion du splash screen (pour les config plus modestes)
   QPixmap p_splash (":/ressources/images/TextEditor.png");
   QSplashScreen splash(p_splash);
   splash.show();
-  splash.showMessage(tr("Chargement des menus.."));
+  splash.showMessage(tr("Chargement des menus..."));
 
   //intitialisation de la fentre et marquage en temps rel du splash screen
   creerActions();
@@ -23,13 +23,6 @@ mainFen::mainFen()
   splash.showMessage(tr("Chargement de la barre d'outils..."));
   creerBarresOutils();
   onglets = new QTabWidget;
-  onglets->addTab(creerOnglet(), tr("Scratch"));
-  onglets->setTabsClosable ( true );
-  onglets->setMovable(true);
-  connect(onglets, SIGNAL(tabCloseRequested ( int  )), this, SLOT(croixFermer(int)));
-  splash.showMessage(tr("Chargement de l'afficheur principal..."));
-  //Ouverture du buffer initial
-
 
   QString adresseFichier(":/ressources/texte/scratch.txt");
   QFile file(adresseFichier);
@@ -37,13 +30,42 @@ mainFen::mainFen()
     {
 
     }
-QTextStream in(&file);
+    QTextStream in(&file);
      QApplication::setOverrideCursor(Qt::WaitCursor);
+     int indexTabDocOuvert = onglets->addTab(creerOnglet(), tr("Nouveau Document"));
+     onglets->setCurrentIndex(indexTabDocOuvert);
+
      editeurActuel()->setPlainText(in.readAll());
+
      QApplication::restoreOverrideCursor();
-  creerSets();
-  //Gestion du titre et connection des onglets
-  changementTitre(adresseFichier);
+    changementTitre(adresseFichier);
+
+  onglets->setTabsClosable ( true );
+  onglets->setMovable(true);
+  connect(onglets, SIGNAL(tabCloseRequested ( int  )), this, SLOT(croixFermer(int)));
+  splash.showMessage(tr("Chargement de l'afficheur principal..."));
+  //Ouverture du buffer initial
+int i = 1;
+while (i< argc)
+{
+  QString adresseFichier(argv[i]);
+  QFile file(adresseFichier);
+  if (!file.open(QFile::ReadOnly))
+    {
+
+    }
+    QTextStream in(&file);
+     QApplication::setOverrideCursor(Qt::WaitCursor);
+     int indexTabDocOuvert = onglets->addTab(creerOnglet(), tr("Nouveau Document"));
+     onglets->setCurrentIndex(indexTabDocOuvert);
+
+     editeurActuel()->setPlainText(in.readAll());
+
+     QApplication::restoreOverrideCursor();
+    changementTitre(adresseFichier);
+
+  i++;
+}
 
   connect(onglets, SIGNAL(currentChanged(int)), this, SLOT(changementOnglet(int)));
   connect(editeurActuel(), SIGNAL(textChanged()), this, SLOT(nonSauve()));
