@@ -1,4 +1,6 @@
-Merci d'avoir tÃ©lÃ©chargÃ© et choisi AquaAash pour Ã©diter vos documents html, php, etc.
-Vous trouverez plus d'informations sur le site de l'Ã©diteur, kustom666.power-heberg.com
+Ceci est le buffer par défaut, vous pouvez l'utiliser pour faire des éditions rapides ou des tests de coloration
 
-Ce programme est sous license GPL, celle-ci est disponible dans le dossier ressources/license sous le nom gpl.txt
+Pour créer un nouveau fichier, cliquez sur l'icône représentant une page blanche dans la barre d'icônes ou dans le menu fichier.
+Pour ouvrir un ou plusieurs fichiers, cliquez sur l'icône représentant un dossier dans la barre d'icônes ou dans le menu fichier.
+
+Si vous avez trouvé un bug, merci de le signaler à cette adresse : http://kustoms.fr/projectbugs/

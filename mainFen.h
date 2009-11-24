@@ -75,6 +75,7 @@ class mainFen : public QMainWindow
 	QAction *actionCSS;
 	QAction *actionOuvrirWeb;
 	QString *texteCombo;
+	QFile *file;
 	QComboBox *comboLexer;
 	QStatusBar *barreLignes;
 	QSettings *settings;

@@ -10,7 +10,8 @@
     </message>
     <message>
         <location filename="mainFen.cpp" line="22"/>
-        <source>Menus chargÃ©s</source>
+        <source>Menus chargés</source>
+        <oldsource>Menus chargÃ©s</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -29,8 +30,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="mainFen.cpp" line="57"/>
+        <source>Prêt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="mainFen.cpp" line="62"/>
-        <source>AAash</source>
+        <location filename="mainFen.cpp" line="372"/>
+        <location filename="mainFen.cpp" line="384"/>
+        <source>Aash</source>
+        <oldsource>AAash</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -75,7 +84,8 @@
     </message>
     <message>
         <location filename="mainFen.cpp" line="85"/>
-        <source>Dzoomer</source>
+        <source>Dézoomer</source>
+        <oldsource>Dzoomer</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -176,40 +186,67 @@
     </message>
     <message>
         <location filename="mainFen.cpp" line="230"/>
-        <location filename="mainFen.cpp" line="455"/>
-        <source>AquaAash Erreur</source>
+        <location filename="mainFen.cpp" line="462"/>
+        <source>Aash Erreur</source>
+        <oldsource>AquaAash Erreur</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainFen.cpp" line="230"/>
-        <location filename="mainFen.cpp" line="455"/>
+        <location filename="mainFen.cpp" line="462"/>
         <source>Vous ne pouvez pas supprimer l&apos;onglet courrant car c&apos;est le dernier.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainFen.cpp" line="236"/>
-        <location filename="mainFen.cpp" line="306"/>
+        <location filename="mainFen.cpp" line="311"/>
         <source>Nouveau Document</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainFen.cpp" line="366"/>
-        <source>AquaAsh</source>
+        <location filename="mainFen.cpp" line="434"/>
+        <source>Le fichier en cours à  subi des modifications, voulez vous le sauvegarder?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainFen.cpp" line="377"/>
-        <source>Aash</source>
+        <location filename="mainFen.cpp" line="474"/>
+        <source>Ligne n° : </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainFen.cpp" line="427"/>
+        <location filename="mainFen.cpp" line="474"/>
+        <source>	 Colonne n° : </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainFen.cpp" line="258"/>
+        <source>Sauvegarde...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainFen.cpp" line="267"/>
+        <source>Fichier Sauvegardé</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainFen.cpp" line="274"/>
+        <source>Enregistrer le document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainFen.cpp" line="274"/>
+        <location filename="mainFen.cpp" line="289"/>
+        <source>Tout document texte(*.*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainFen.cpp" line="289"/>
+        <source>Ouvrir un fichier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainFen.cpp" line="434"/>
         <source>Sauvegarder les fichiers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainFen.cpp" line="427"/>
-        <source>Le fichier en cours est modifiÃ©, voulez vous le sauvegarder?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
